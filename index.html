@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ] ><!-->
+<html lang="ru-RU" class="no-js">
+<!--<![endif]-->
+<!-- DOCTYPE html>: DOCTYPE htmlЭто объявление типа документа (DOCTYPE), которое сообщает браузеру, что документ написан на HTML5. 
+<!--[if !(IE 6) | !(IE 7) | !(IE 8) ]>: Условный комментарий для Internet Explorer. Этот код используется для определения старых версий браузера Internet Explorer (версии 6, 7 и 8). В данном случае этот код проверяет, не используется ли одна из этих старых версий браузера. Если текущая версия браузера не является одной из указанных, то будет выполнен следующий код (открытие тега <html>).
+<html lang="ru-RU" class="no-js">: Открытие тега <html> с атрибутами lang и class.-->
+
+<head>
+    <!-- Устанавливает кодировку документа в UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Устанавливает настройки просмотра для мобильных устройств -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- Устанавливает цвет темы для браузера -->
+    <meta name="theme-color" content="#1d7f00"/>
+    <!-- Указывает на профиль XFN (XHTML Friends Network) -->
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
+    <script type="text/javascript">
+        // Проверяет, используется ли мобильное устройство
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            var originalAddEventListener = EventTarget.prototype.addEventListener,
+                oldWidth = window.innerWidth;
+
+            // Переопределяет функцию addEventListener для события resize
+            EventTarget.prototype.addEventListener = function (eventName, eventHandler, useCapture) {
+                if (eventName === "resize") {
+                    originalAddEventListener.call(this, eventName, function (event) {
+                        if (oldWidth === window.innerWidth) {
+                            return;
+                        } else if (oldWidth !== window.innerWidth) {
+                            oldWidth = window.innerWidth;
+                        }
+                        if (eventHandler.handleEvent) {
+                            eventHandler.handleEvent.call(this, event);
+                        } else {
+                            eventHandler.call(this, event);
+                        }
+                    }, useCapture);
+                } else {
+                    originalAddEventListener.call(this, eventName, eventHandler, useCapture);
+                }
+            };
+        }
+    </script>
+    <!-- Устанавливает заголовок страницы -->
+    <title>Урожай61.рф &#8211; Официальный сайт СНТ "Урожай" в Ростове-на-Дону</title>
+    <!-- Указывает поисковым роботам показывать большие превью изображений -->
+    <meta name='robots' content='max-image-preview:large' />
+    <!-- Указывает браузеру заранее выполнить DNS-префетчинг для указанных доменов -->
+    <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <!-- Указывает на RSS-ленту сайта -->
+    <link rel="alternate" type="application/rss+xml" title="Урожай61.рф &raquo; Лента" href="/feed/" />
+    <!-- Указывает на RSS-ленту комментариев сайта -->
+    <link rel="alternate" type="application/rss+xml" title="Урожай61.рф &raquo; Лента комментариев" href="/comments/feed/" />
+
+ <!-- Настройки скрипта Wordpress Emoji, включающие URL-адреса для загрузки изображений эмодзи -->
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.5.4"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+
+<!-- Указывает и подключает стили сайта -->
+<link rel='stylesheet' id='mec-select2-style-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/packages/select2/select2.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-font-icons-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/css/iconfonts.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-frontend-style-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/css/frontend.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-tooltip-style-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/packages/tooltip/tooltip.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-tooltip-shadow-style-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/packages/tooltip/tooltipster-sideTip-shadow.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='featherlight-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/packages/featherlight/featherlight.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-google-fonts-css' href='//fonts.googleapis.com/css?family=Montserrat%3A400%2C700%7CRoboto%3A100%2C300%2C400%2C700&#038;ver=6.5.4' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-lity-style-css' href='/wp-content/plugins/modern-events-calendar-lite/assets/packages/lity/lity.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='layerslider-css' href='/wp-content/plugins/LayerSlider/static/layerslider/css/layerslider.css' type='text/css' media='all' />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+
+<!-- Указывает и подключает стили сайта -->
+<style id='pdfemb-pdf-embedder-viewer-style-inline-css' type='text/css'>
+.wp-block-pdfemb-pdf-embedder-viewer{max-width:none}
+
+</style>
+<link rel='stylesheet' id='awsm-ead-public-css' href='/wp-content/plugins/embed-any-document/css/embed-public.min.css' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--accent: #1d7f00;--wp--preset--color--dark-gray: #111;--wp--preset--color--light-gray: #767676;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<!-- Указывает и подключает стили сайта -->
+<link rel='stylesheet' id='contact-form-7-css' href='/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='go-pricing-styles-css' href='/wp-content/plugins/go_pricing/assets/css/go_pricing_styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tp_twitter_plugin_css-css' href='/wp-content/plugins/recent-tweets-widget/tp_twitter_plugin.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='/wp-content/plugins/revslider/public/assets/css/rs6.css' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+<link rel='stylesheet' id='stripe-handler-ng-style-css' href='/wp-content/plugins/stripe-payments/public/assets/css/public.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css' href='/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='/wp-content/plugins/elementor/assets/css/frontend.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-css' href='/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-9-css' href='/wp-content/uploads/elementor/css/post-9.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='/wp-content/uploads/elementor/css/global.css' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-11-css' href='/wp-content/uploads/elementor/css/post-11.css' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css' href='/wp-content/plugins/js_composer/assets/css/js_composer.min.css' type='text/css' media='all' />
+<!-- Указывает и подключает шрифт сайта -->
+<link rel='stylesheet' id='dt-web-fonts-css' href='https://fonts.googleapis.com/css?family=Roboto:400,600,700%7COpen+Sans:400,500,600,700%7CRoboto+Condensed:400,600,700' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-main-css' href='/wp-content/themes/dt-the7/css/main.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-font-css' href='/wp-content/themes/dt-the7/fonts/icomoon-the7-font/icomoon-the7-font.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-custom-scrollbar-css' href='/wp-content/themes/dt-the7/lib/custom-scrollbar/custom-scrollbar.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-wpbakery-css' href='/wp-content/themes/dt-the7/css/wpbakery.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-core-css' href='/wp-content/plugins/dt-the7-core/assets/css/post-type.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-css-vars-css' href='/wp-content/uploads/the7-css/css-vars.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-custom-css' href='/wp-content/uploads/the7-css/custom.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-media-css' href='/wp-content/uploads/the7-css/media.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-mega-menu-css' href='/wp-content/uploads/the7-css/mega-menu.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-elements-albums-portfolio-css' href='/wp-content/uploads/the7-css/the7-elements-albums-portfolio.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-elements-css' href='/wp-content/uploads/the7-css/post-type-dynamic.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='/wp-content/themes/dt-the7/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='the7-elementor-global-css' href='/wp-content/themes/dt-the7/css/compatibility/elementor/elementor-global.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ultimate-style-css' href='/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/style.min.css' type='text/css' media='all' />
+<!-- Указывает и подключает шрифт сайта -->
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;subset=cyrillic&#038;ver=6.5.4' type='text/css' media='all' />
+<!-- Предварительное соединение с сервером для оптимизации загрузки шрифтов -->
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="text/javascript" id="jquery-core-js-extra">
+
+<!-- Указывает и подключает скрипты сайта JS -->
+/* <![CDATA[ */
+var slide_in = {"demo_dir":"\/wp-content\/plugins\/convertplug\/modules\/slide_in\/assets\/demos"};
+/* ]]> */
+</script>
+<!--Этот код подключает два JavaScript файла, относящихся к библиотеке jQuery: -->
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="mec-frontend-script-js-extra">
+/* <![CDATA[ */
+var mecdata = {"day":"\u0434\u0435\u043d\u044c","days":"\u0434\u043d\u0438","hour":"\u0447\u0430\u0441","hours":"\u0447\u0430\u0441\u044b","minute":"\u043c\u0438\u043d\u0443\u0442\u0430","minutes":"\u043c\u0438\u043d\u0443\u0442\u044b","second":"\u0441\u0435\u043a\u0443\u043d\u0434\u0430","seconds":"\u0441\u0435\u043a\u0443\u043d\u0434\u044b","elementor_edit_mode":"no","recapcha_key":"","ajax_url":"\/wp-admin\/admin-ajax.php","fes_nonce":"4285c4bc9d","current_year":"2024","current_month":"06","datepicker_format":"yy-mm-dd"};
+/* ]]> */
+</script>
+<!--Этот код подключает два JavaScript файла для плагина Modern Events Calendar Lite: -->
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/js/frontend.js" id="mec-frontend-script-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/js/events.js" id="mec-events-script-js"></script>
+<script type="text/javascript" id="layerslider-greensock-js-extra">
+/* <![CDATA[ */
+var LS_Meta = {"v":"6.10.2"};
+/* ]]> */
+</script>
+<!-- 
+Первая строка подключает файл greensock.js, который предоставляет необходимые функции из библиотеки GSAP (GreenSock Animation Platform).
+Вторая строка подключает основной файл плагина LayerSlider для работы с jQuery.
+Третья строка подключает файл layerslider.transitions.js, который, содержит дополнительные переходы и анимации для слайдов.
+-->
+<script type="text/javascript" src="/wp-content/plugins/LayerSlider/static/layerslider/js/greensock.js" id="layerslider-greensock-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.kreaturamedia.jquery.js" id="layerslider-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.transitions.js" id="layerslider-transitions-js"></script>
+<script type="text/javascript" id="gw-tweenmax-js-before">
+/* <![CDATA[ */
+var oldGS=window.GreenSockGlobals,oldGSQueue=window._gsQueue,oldGSDefine=window._gsDefine;window._gsDefine=null;delete(window._gsDefine);var gwGS=window.GreenSockGlobals={};
+/* ]]> */
+</script>
+<!-- TweenMax.min.js из библиотеки GSAP (GreenSock Animation Platform), который предоставляет возможности для создания анимаций веб-страницы. -->
+<script type="text/javascript" src="/o__cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js" id="gw-tweenmax-js"></script>
+<script type="text/javascript" id="gw-tweenmax-js-after">
+/* <![CDATA[ */
+try{window.GreenSockGlobals=null;window._gsQueue=null;window._gsDefine=null;delete(window.GreenSockGlobals);delete(window._gsQueue);delete(window._gsDefine);window.GreenSockGlobals=oldGS;window._gsQueue=oldGSQueue;window._gsDefine=oldGSDefine;}catch(e){}
+/* ]]> */
+</script>
+<!-- Подключение скриптов плагина для Слайдера картинок -->
+<script type="text/javascript" src="/wp-content/plugins/revslider/public/assets/js/rbtools.min.js" id="tp-tools-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/revslider/public/assets/js/rs6.min.js" id="revmin-js"></script>
+<script type="text/javascript" id="dt-above-fold-js-extra">
+/* <![CDATA[ */
+var dtLocal = {"themeUrl":"\/wp-content\/themes\/dt-the7","passText":"\u0414\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u044d\u0442\u043e\u0439 \u0437\u0430\u043a\u0440\u044b\u0442\u043e\u0439 \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438, \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0430\u0440\u043e\u043b\u044c \u043d\u0438\u0436\u0435:","moreButtonText":{"loading":"\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430 ...","loadMore":"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0435\u0449\u0451"},"postID":"11","ajaxurl":"\/wp-admin\/admin-ajax.php","REST":{"baseUrl":"\/wp-json\/the7\/v1","endpoints":{"sendMail":"\/send-mail"}},"contactMessages":{"required":"One or more fields have an error. Please check and try again.","terms":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u0440\u0438\u043c\u0438\u0442\u0435 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0443 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438.","fillTheCaptchaError":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435 \u043a\u0430\u043f\u0447\u0443."},"captchaSiteKey":"","ajaxNonce":"9272b443c1","pageData":{"type":"page","template":"page","layout":null},"themeSettings":{"smoothScroll":"off","lazyLoading":false,"accentColor":{"mode":"gradient","color":"#1d7f00"},"desktopHeader":{"height":""},"ToggleCaptionEnabled":"disabled","ToggleCaption":"\u041d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f","floatingHeader":{"showAfter":120,"showMenu":true,"height":70,"logo":{"showLogo":true,"html":"<img class=\" preload-me\" src=\"\/wp-content\/themes\/dt-the7\/inc\/presets\/images\/full\/skin11r.header-style-floating-logo-regular.png\" srcset=\"\/wp-content\/themes\/dt-the7\/inc\/presets\/images\/full\/skin11r.header-style-floating-logo-regular.png 44w, \/wp-content\/themes\/dt-the7\/inc\/presets\/images\/full\/skin11r.header-style-floating-logo-hd.png 88w\" width=\"44\" height=\"44\"   sizes=\"44px\" alt=\"\u0423\u0440\u043e\u0436\u0430\u043961.\u0440\u0444\" \/>","url":"\/"}},"topLine":{"floatingTopLine":{"logo":{"showLogo":false,"html":""}}},"mobileHeader":{"firstSwitchPoint":1300,"secondSwitchPoint":778,"firstSwitchPointHeight":60,"secondSwitchPointHeight":60,"mobileToggleCaptionEnabled":"disabled","mobileToggleCaption":"\u041c\u0435\u043d\u044e"},"stickyMobileHeaderFirstSwitch":{"logo":{"html":""}},"stickyMobileHeaderSecondSwitch":{"logo":{"html":""}},"content":{"textColor":"#85868c","headerColor":"#333333"},"sidebar":{"switchPoint":992},"boxedWidth":"1340px","stripes":{"stripe1":{"textColor":"#888888","headerColor":"#3a3a3a"},"stripe2":{"textColor":"#a5a5a5","headerColor":"#eeeeee"},"stripe3":{"textColor":"#3a3a3a","headerColor":"#3a3a3a"}}},"VCMobileScreenWidth":"768","elementor":{"settings":{"container_width":1140}}};
+var dtShare = {"shareButtonText":{"facebook":"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u0441\u044f \u0432 Facebook","twitter":"\u0422\u0432\u0438\u0442\u043d\u0443\u0442\u044c","pinterest":"Pin it","linkedin":"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u0441\u044f Linkedin","whatsapp":"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0432 WhatsApp"},"overlayOpacity":"85"};
+/* ]]> */
+</script>
+<!-- dtLocal: Этот объект содержит различные настройки темы, такие как URL темы, тексты кнопок, настройки AJAX и другие параметры.
+dtShare: Этот объект содержит тексты кнопок для социального шаринга и другие настройки, такие как прозрачность оверлея. -->
+
+
+
+<script type="text/javascript" src="/wp-content/themes/dt-the7/js/above-the-fold.min.js" id="dt-above-fold-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/ultimate-params.min.js" id="ultimate-vc-params-js"></script>
+<meta name="generator" content="Powered by LayerSlider 6.10.2 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress." />
+<!-- LayerSlider updates and docs at: https://layerslider.kreaturamedia.com -->
+<!-- Указывает на наличие API интерфейса WordPress -->
+<link rel="https://api.w.org/" href="/wp-json/" />
+
+<!-- Указывает на альтернативный формат данных в формате JSON для страницы с ID 11 -->
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/11" />
+
+<!-- Указывает на расположение RSD (Really Simple Discovery) файла для XML-RPC -->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+
+<!-- Указывает, что сайт создан на WordPress версии 6.5.4 -->
+<meta name="generator" content="WordPress 6.5.4" />
+
+<!-- Указывает канонический URL страницы -->
+<link rel="canonical" href="http://aethir.twc1.net/" />
+
+<!-- Указывает короткую ссылку на главную страницу -->
+<link rel='shortlink' href='/' />
+
+<!-- Указывает на альтернативный формат данных в формате JSON+oEmbed для страницы -->
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Faethir.twc1.net%2F" />
+
+<!-- Указывает на альтернативный формат данных в формате XML+oEmbed для страницы -->
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Faethir.twc1.net%2F&#038;format=xml" />
+
+<!-- Устанавливает название сайта для Open Graph -->
+<meta property="og:site_name" content="Урожай61.рф" />
+
+<!-- Устанавливает заголовок страницы для Open Graph -->
+<meta property="og:title" content="СНТ Урожай Ростов-на-Дону" />
+
+<!-- Устанавливает URL страницы для Open Graph -->
+<meta property="og:url" content="/" />
+
+<!-- Устанавливает тип объекта для Open Graph -->
+<meta property="og:type" content="website" />
+
+<!-- Указывает, что сайт использует Elementor версии 3.21.8 и перечисляет некоторые его функции -->
+<meta name="generator" content="Elementor 3.21.8; features: e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+
+<!-- Указывает, что сайт использует WPBakery Page Builder -->
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+
+<!-- Указывает, что сайт использует Slider Revolution версии 6.4.11 -->
+<meta name="generator" content="Powered by Slider Revolution 6.4.11 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+
+<!-- Указывает на фавиконку сайта -->
+<link rel="icon" href="/wp-content/uploads/2021/05/green-home1.png" type="image/png" sizes="16x16"/><script type="text/javascript">
+    function setREVStartSize(e) {
+        // Установка глобальных переменных для ширины и высоты окна
+        window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;	
+        window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;	
+        try {								
+            // Получение ширины родительского элемента слайда
+            var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                newh;
+            pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
+            
+            // Преобразование значений параметров в числа (если они определены)
+            e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);
+            e.thumbw = e.thumbw === undefined ? 0 : parseInt(e.thumbw);
+            e.tabh = e.tabh === undefined ? 0 : parseInt(e.tabh);
+            e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
+            e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
+            e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
+            e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);		
+            
+            // Установка высоты для полноэкранного режима
+            if (e.layout === "fullscreen" || e.l === "fullscreen") {
+                newh = Math.max(e.mh, window.RSIH);
+            } else {					
+                // Обработка ширины и высоты для разных разрешений
+                e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i-1];
+                e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
+                e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i-1];
+                
+                // Вычисление новых размеров слайда
+                var nl = new Array(e.rl.length),
+                    ix = 0,
+                    sl;
+                e.tabw = e.tabhide >= pw ? 0 : e.tabw;
+                e.thumbw = e.thumbhide >= pw ? 0 : e.thumbw;
+                e.tabh = e.tabhide >= pw ? 0 : e.tabh;
+                e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;					
+                for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
+                sl = nl[0];
+                for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
+                var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
+                newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
+            }
+
+            // Создание и применение стилей для слайда
+            if (window.rs_init_css === undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));
+            document.getElementById(e.c).height = newh + "px";
+            window.rs_init_css.innerHTML += "#" + e.c + "_wrapper { height: " + newh + "px }";
+        } catch (e) {
+            // Обработка ошибок
+            console.log("Failure at Presize of Slider:" + e)
+        }					   
+    }
+</script>
+<!--
+Глобальные переменные: window.RSIW и window.RSIH используются для хранения ширины и высоты окна.
+Получение родительской ширины: Ширина родительского элемента слайда pw используется для вычислений.
+Преобразование параметров: Значения параметров слайда (tabw, thumbw, tabh, thumbh, tabhide, thumbhide, mh) преобразуются в числа для последующих вычислений.
+Полноэкранный режим: Если слайд настроен на полноэкранный режим, высота newh устанавливается равной максимальному значению из заданной высоты (mh) и высоты окна.
+Размеры для разных разрешений: Для всех разрешений (rl) определяются ширины (gw) и высоты (gh) слайдов.
+Вычисление новой высоты: На основании ширины родительского элемента и параметров слайда вычисляется новая высота newh.
+Применение стилей: Создается элемент <style>, который добавляет стили для изменения высоты слайда и его контейнера.
+Обработка ошибок: Если происходит ошибка при вычислениях, она логируется в консоль. -->
+
+
+
+<style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1621341952042{margin-bottom: -70px !important;border-bottom-width: -70px !important;padding-bottom: -70px !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+<body id="the7-body" class="home page-template-default page page-id-11 wp-embed-responsive the7-core-ver-2.5.6.2 slideshow-on dt-responsive-on header-side-left right-mobile-menu-close-icon ouside-menu-close-icon mobile-hamburger-close-bg-enable mobile-hamburger-close-bg-hover-enable  fade-medium-mobile-menu-close-icon fade-medium-menu-close-icon accent-gradient srcset-enabled btn-flat custom-btn-color custom-btn-hover-color sticky-mobile-header first-switch-logo-left first-switch-menu-right second-switch-logo-left second-switch-menu-right right-mobile-menu layzr-loading-on popup-message-style the7-ver-9.10.1 wpb-js-composer js-comp-ver-6.6.0.1 vc_responsive elementor-default elementor-kit-9 elementor-page elementor-page-11">
+<!-- The7 9.10.1 -->
+
+<div id="page" >
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержанию</a>
+
+<div class="masthead side-header widgets full-height h-justify line-decoration shadow-mobile-header-decoration sub-sideways small-mobile-menu-icon dt-parent-menu-clickable show-sub-menu-on-hover show-device-logo show-mobile-logo" role="banner">
+	
+
+	<div class="top-bar top-bar-empty top-bar-line-hide">
+	<div class="top-bar-bg" ></div>
+	<div class="mini-widgets left-widgets"></div><div class="mini-widgets right-widgets"></div></div>
+
+	<header class="header-bar">
+
+		<div class="branding">
+	<div id="site-title" class="assistive-text">Урожай61.рф</div>
+	<div id="site-description" class="assistive-text">Официальный сайт СНТ &quot;Урожай&quot; в Ростове-на-Дону</div>
+	<a class="" href="/"><img class="preload-me" src="/wp-content/uploads/2021/05/б.png" srcset="/wp-content/uploads/2021/05/б.png 130w" width="130" height="115"   sizes="130px" alt="Урожай61.рф" /></a></div>
+
+		<ul id="primary-menu" class="main-nav underline-decoration l-to-r-line gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-11 current_page_item menu-item-20 act first" role="presentation"><a href='/' class='mega-menu-img mega-menu-img-left' data-level='1' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-home-022" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Главная</span></span></a></li> <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28 has-children" role="presentation"><a href='/%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='1' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-more-00" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Документы</span></span></a><ul class="sub-nav gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-914 first has-children" role="presentation"><a href='/%d1%81%d0%be%d0%b1%d1%80%d0%b0%d0%bd%d0%b8%d0%b5-%d0%be%d1%82-12-04-2024-%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='2' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-more-00" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Собрание от 12.04.2024 (документы)</span></span></a><ul class="sub-nav gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-829 first has-children" role="presentation"><a href='/%d1%81%d0%bc%d0%b5%d1%82%d1%8b-%d0%b0%d0%ba%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='3' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-more-00" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Несостоявшиеся собрание в очной форме от 03.03.24</span></span></a><ul class="sub-nav gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-396 first" role="presentation"><a href='/category/%d0%bf%d0%be%d0%bb%d0%b5%d0%b7%d0%bd%d0%b0%d1%8f_%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f_%d0%b4%d0%bb%d1%8f_%d1%81%d0%be%d0%b1%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%b8%d0%ba/' class='mega-menu-img mega-menu-img-left' data-level='4' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-map-03" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Полезная информация для собственников</span></span></a></li> </ul></li> </ul></li> </ul></li> <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31" role="presentation"><a href='/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='1' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-phone-06" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Контакты</span></span></a></li> </ul>
+		<div class="mini-widgets"><span class="mini-contacts email show-on-desktop near-logo-first-switch in-menu-second-switch"><i class="fa-fw the7-mw-icon-mail-bold"></i>harvest.rnd@mail.ru</span></div>
+	</header>
+
+</div>
+<div class="dt-mobile-header mobile-menu-show-divider">
+	<div class="dt-close-mobile-menu-icon"><div class="close-line-wrap"><span class="close-line"></span><span class="close-line"></span><span class="close-line"></span></div></div>	<ul id="mobile-menu" class="mobile-main-nav" role="menubar">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-11 current_page_item menu-item-20 act first" role="presentation"><a href='/' class='mega-menu-img mega-menu-img-left' data-level='1' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-home-022" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Главная</span></span></a></li> <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-28 has-children" role="presentation"><a href='/%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='1' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-more-00" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Документы</span></span></a><ul class="sub-nav gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-914 first has-children" role="presentation"><a href='/%d1%81%d0%be%d0%b1%d1%80%d0%b0%d0%bd%d0%b8%d0%b5-%d0%be%d1%82-12-04-2024-%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='2' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-more-00" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Собрание от 12.04.2024 (документы)</span></span></a><ul class="sub-nav gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-829 first has-children" role="presentation"><a href='/%d1%81%d0%bc%d0%b5%d1%82%d1%8b-%d0%b0%d0%ba%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='3' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-more-00" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Несостоявшиеся собрание в очной форме от 03.03.24</span></span></a><ul class="sub-nav gradient-hover level-arrows-on" role="menubar"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-396 first" role="presentation"><a href='/category/%d0%bf%d0%be%d0%bb%d0%b5%d0%b7%d0%bd%d0%b0%d1%8f_%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d1%8f_%d0%b4%d0%bb%d1%8f_%d1%81%d0%be%d0%b1%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d0%b8%d0%ba/' class='mega-menu-img mega-menu-img-left' data-level='4' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-map-03" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Полезная информация для собственников</span></span></a></li> </ul></li> </ul></li> </ul></li> <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31" role="presentation"><a href='/%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b/' class='mega-menu-img mega-menu-img-left' data-level='1' role="menuitem"><i class="fa-fw icomoon-the7-font-the7-phone-06" style="margin: 0px 6px 0px 0px;" ></i><span class="menu-item-text"><span class="menu-text">Контакты</span></span></a></li> 	</ul>
+	<div class='mobile-mini-widgets-in-menu'></div>
+</div>
+
+<div id="main-slideshow" data-width="1200" data-height="500" data-autoslide="5000" data-scale="fill" data-paused="true"></div>
+
+<div id="main" class="sidebar-none sidebar-divider-off">
+
+	
+	<div class="main-gradient"></div>
+	<div class="wf-wrap">
+	<div class="wf-container-main">
+
+	
+
+
+	<div id="content" class="content" role="main">
+
+				<div data-elementor-type="wp-page" data-elementor-id="11" class="elementor elementor-11">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-101d8b98 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="101d8b98" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3eb87c46" data-id="3eb87c46" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5c854a11 elementor-widget elementor-widget-text-editor" data-id="5c854a11" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p style="text-align: center;"><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<p><span style="color: var( --e-global-color-text ); font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: var( --e-global-typography-text-font-weight ); word-spacing: normal;"></p>
+
+		</div>
+	</div>
+<div class="dt-fancy-separator h3-size accent-title-color accent-border-color" style="width: 100%;"><div class="dt-fancy-title"><span class="separator-holder separator-left"></span>Добро пожаловать на сайт СНТ &#8220;Урожай&#8220;<span class="separator-holder separator-right"></span></div></div>
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<p></span></p>
+<h4 style="text-align: center;">Здесь вы найдете полезные материалы для ознакомления, документы а так же новости СНТ &#8220;Урожай&#8221;.</p>
+</h4>
+<h4 style="text-align: center;">&nbsp;</h4>
+
+		</div>
+	</div>
+<div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<p>Здесь небольшой текст о СНТ &#8220;Урожай&#8221; на пример как добраться или дата основания и тд. Какой то интересный факт о садовом товариществе.</p>
+
+		</div>
+	</div>
+<style type="text/css" data-type="the7_shortcodes-inline-css">#default-btn-e79a1166d02463f840b96490a7a552ac.ico-right-side > i {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+#default-btn-e79a1166d02463f840b96490a7a552ac > i {
+  margin-right: 8px;
+}
+#default-btn-e79a1166d02463f840b96490a7a552ac * {
+  vertical-align: middle;
+}
+</style><a href="/устав/" class="default-btn-shortcode dt-btn dt-btn-l swing animate-element animation-builder link-hover-off full-width-btn btn-inline-left" id="default-btn-e79a1166d02463f840b96490a7a552ac"><span>ПОСМОТРЕТЬ УСТАВ</span></a><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><style type="text/css" data-type="the7_shortcodes-inline-css">#default-btn-34f3bd517d0f08702c47cd13fc0f2cce.ico-right-side > i {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+#default-btn-34f3bd517d0f08702c47cd13fc0f2cce > i {
+  margin-right: 8px;
+}
+#default-btn-34f3bd517d0f08702c47cd13fc0f2cce * {
+  vertical-align: middle;
+}
+</style><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2021/05/beautiful-flowers-EFK3C6S-1.jpg" alt="" width="479" height="338"></p>
+
+		</div>
+	</div>
+</div></div></div></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><div class="dt-fancy-separator h3-size accent-title-color accent-border-color" style="width: 100%;"><div class="dt-fancy-title"><span class="separator-holder separator-left"></span>Полезная информация<span class="separator-holder separator-right"></span></div></div>
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<h4 style="text-align: center;">Общая информация для всех садоводов.</h4>
+
+		</div>
+	</div>
+<!-- Стили сайта, блоков-->
+<style type="text/css" data-type="the7_shortcodes-inline-css">.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on.classic-layout-list article {
+  padding-top: 0;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on.classic-layout-list article:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.classic-layout-list.mode-list .post-entry-content {
+  width: calc(100% - );
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.classic-layout-list.mode-list .no-img .post-entry-content {
+  width: 100%;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .filter-bg-decoration .filter-categories a.act {
+  color: #fff;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3:not(.mode-masonry) article:first-of-type,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3:not(.mode-masonry) article.visible.first:not(.product) {
+  margin-top: 0;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on:not(.mode-masonry) article {
+  margin-top: 0;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on:not(.mode-masonry) article:first-of-type,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on:not(.mode-masonry) article.visible.first:not(.product) {
+  margin-top: 0;
+  padding-top: 0;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-thumbnail-wrap {
+  padding: 0px 0px 0px 0px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.enable-bg-rollover .post-thumbnail-rollover:after {
+  background: -webkit-linear-gradient();
+  background: linear-gradient();
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 100px;
+  margin: -22px 0 0 -22px;
+  border-width: 0px;
+  color: #ffffff;
+  background: none;
+}
+.bottom-overlap-layout-list.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico {
+  margin-top: -72px;
+}
+.gradient-overlay-layout-list.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico,
+.content-rollover-layout-list.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico {
+  margin: 0 0 10px;
+}
+.content-align-center.gradient-overlay-layout-list.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico,
+.content-align-center.content-rollover-layout-list.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico {
+  margin: 0 auto 10px;
+}
+.dt-icon-bg-on.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico {
+  background: rgba(255,255,255,0.3);
+  box-shadow: none;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico > span,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico:before {
+  font-size: 32px;
+  line-height: 44px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico > span,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .gallery-zoom-ico:before {
+  color: #ffffff;
+  background: none;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .entry-title,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.owl-carousel .entry-title {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .entry-meta {
+  margin-bottom: 15px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .portfolio-categories {
+  margin-bottom: 15px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .entry-excerpt {
+  margin-bottom: 5px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3:not(.centered-layout-list) .post-entry-content {
+  padding: 15px 20px 20px 20px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3:not(.centered-layout-list):not(.content-bg-on):not(.mode-list) .no-img .post-entry-content {
+  padding: 0;
+}
+@media screen and (max-width: ) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 article {
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    margin-top: 20px;
+  }
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on article {
+    border: none;
+  }
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.content-bg-on.centered-layout-list article {
+    padding: 0;
+  }
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.blog-shortcode.dividers-on article,
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on.classic-layout-list article {
+    margin-top: 20px;
+    padding: 0;
+  }
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.blog-shortcode.dividers-on article:first-of-type,
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.dividers-on.classic-layout-list article:first-of-type {
+    padding: 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-thumbnail-wrap,
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-entry-content {
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-thumbnail-wrap {
+    padding: 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-entry-content:after {
+    display: none;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .project-even .post-thumbnail-wrap,
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.centered-layout-list .post-thumbnail-wrap {
+    -ms-flex-order: 0;
+    order: 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.centered-layout-list .post-entry-title-content {
+    -ms-flex-order: 1;
+    order: 1;
+    width: 100%;
+    padding: 20px 20px 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.centered-layout-list .post-entry-content {
+    -ms-flex-order: 2;
+    order: 2;
+    padding-top: 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .fancy-categories {
+    top: 10px;
+    left: 10px;
+    bottom: auto;
+    right: auto;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .fancy-date a {
+    top: 10px;
+    right: 10px;
+    left: auto;
+    bottom: auto;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-entry-content {
+    padding: 20px;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .entry-title {
+    margin: 3px 0 5px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .entry-meta {
+    margin: 5px 0 5px;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .entry-excerpt {
+    margin: 15px 0 0;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-details {
+    margin: 5px 0 10px;
+  }
+  #page .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .post-details.details-type-link {
+    margin-bottom: 2px;
+  }
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a {
+  width: 36px;
+  height: 36px;
+  border-radius: 500px;
+}
+.dt-arrow-border-on.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a:not(:hover):before {
+  border-width: 0px;
+}
+.dt-arrow-hover-border-on.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a:hover:after {
+  border-width: 0px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a.owl-prev {
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  left: -43px;
+}
+@media all and (-ms-high-contrast: none) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a.owl-prev {
+    transform: translateY(-50%);
+    margin-top: 0px;
+  }
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a.owl-prev i {
+  padding: 0px 0px 0px 0px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a.owl-next {
+  top: 50%;
+  transform: translateY(calc(-50% + 0px));
+  right: -43px;
+}
+@media all and (-ms-high-contrast: none) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a.owl-next {
+    transform: translateY(-50%);
+    margin-top: 0px;
+  }
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a.owl-next i {
+  padding: 0px 0px 0px 0px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav i {
+  font-size: 18px;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a:not(:hover) i,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a:not(:hover) i:before {
+  color: #ffffff;
+  background: none;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a:hover i,
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-nav a:hover i:before {
+  color: rgba(255,255,255,0.75);
+  background: none;
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-dots {
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(calc(-50% + 0px));
+}
+@media all and (-ms-high-contrast: none) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-dots {
+    transform: translateX(-50%);
+    margin-left: 0px;
+  }
+}
+.blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 .owl-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+}
+@media screen and (max-width: 778px) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.hide-arrows .owl-nav a {
+    display: none;
+  }
+}
+@media screen and (max-width: 778px) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.reposition-arrows .owl-nav .owl-prev {
+    top: 50%;
+    transform: translateY(calc(-50% + 0px));
+    left: 10px;
+  }
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.reposition-arrows .owl-nav .owl-next {
+    top: 50%;
+    transform: translateY(calc(-50% + 0px));
+    right: 10px;
+  }
+}
+@media screen and (max-width: 778px) and all and (-ms-high-contrast: none) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.reposition-arrows .owl-nav .owl-prev {
+    transform: translateY(-50%);
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 778px) and all and (-ms-high-contrast: none) {
+  .blog-carousel-shortcode.blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3.reposition-arrows .owl-nav .owl-next {
+    transform: translateY(-50%);
+    margin-top: 0px;
+  }
+}
+</style><div class="owl-carousel blog-carousel-shortcode dt-owl-carousel-call blog-carousel-shortcode-id-629c840144c7b2358d080ae5939149f3 classic-layout-list content-bg-on scale-img dt-icon-bg-off dt-arrow-border-on dt-arrow-hover-border-on meta-info-off bullets-small-dot-stroke reposition-arrows arrows-bg-on disable-arrows-hover-bg arrows-hover-bg-on" data-scroll-mode="1" data-col-num="3" data-wide-col-num="4" data-laptop-col="3" data-h-tablet-columns-num="3" data-v-tablet-columns-num="3" data-phone-columns-num="1" data-auto-height="true" data-col-gap="30" data-stage-padding="0" data-speed="600" data-autoplay="false" data-autoplay_speed="6000" data-arrows="true" data-bullet="false" data-next-icon="icon-ar-017-r" data-prev-icon="icon-ar-017-l"><article class="post no-img post-650 type-post status-publish format-standard hentry category-___ category-5 description-off" data-name="Поздравление с Новым 2024 годом от Правления СНТ &#8220;Урожай&#8221;" data-date="2022-12-30T21:21:56+03:00">
+
+<div class="post-entry-content">
+
+	<h3 class="entry-title">
+		<a href="/%d0%bf%d0%be%d0%b7%d0%b4%d1%80%d0%b0%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d1%81-%d0%bd%d0%be%d0%b2%d1%8b%d0%bc-2023-%d0%b3%d0%be%d0%b4%d0%be%d0%bc-%d0%be%d1%82-%d0%bf%d1%80%d0%b0%d0%b2%d0%bb%d0%b5/" title="Поздравление с Новым 2024 годом от Правления СНТ &#8220;Урожай&#8221;" rel="bookmark">Поздравление с Новым 2024 годом от Правления СНТ &#8220;Урожай&#8221;</a>
+	</h3>
+
+	
+	
+	
+<a href="/%d0%bf%d0%be%d0%b7%d0%b4%d1%80%d0%b0%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b5-%d1%81-%d0%bd%d0%be%d0%b2%d1%8b%d0%bc-2023-%d0%b3%d0%be%d0%b4%d0%be%d0%bc-%d0%be%d1%82-%d0%bf%d1%80%d0%b0%d0%b2%d0%bb%d0%b5/" class="post-details details-type-link" aria-label="Read more about Поздравление с Новым 2024 годом от Правления СНТ &#8220;Урожай&#8221;" rel="nofollow">Подробнее<i class="dt-icon-the7-arrow-03" aria-hidden="true"></i></a>
+
+</div></article><article class="post no-img post-647 type-post status-publish format-standard hentry category-___ category-5 description-off" data-name="Безопасный Новый Год" data-date="2022-12-30T21:20:31+03:00">
+
+<div class="post-entry-content">
+
+	<h3 class="entry-title">
+		<a href="/%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d1%8b%d0%b9-%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d0%b3%d0%be%d0%b4-2/" title="Безопасный Новый Год" rel="bookmark">Безопасный Новый Год</a>
+	</h3>
+
+	
+	
+	
+<a href="/%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d1%8b%d0%b9-%d0%bd%d0%be%d0%b2%d1%8b%d0%b9-%d0%b3%d0%be%d0%b4-2/" class="post-details details-type-link" aria-label="Read more about Безопасный Новый Год" rel="nofollow">Подробнее<i class="dt-icon-the7-arrow-03" aria-hidden="true"></i></a>
+
+</div></article><article class="post no-img post-644 type-post status-publish format-standard hentry category-___ category-5 description-off" data-name="Меры предосторожности при гололёде" data-date="2022-12-30T21:17:21+03:00">
+
+<div class="post-entry-content">
+
+	<h3 class="entry-title">
+		<a href="/%d0%bc%d0%b5%d1%80%d1%8b-%d0%bf%d1%80%d0%b5%d0%b4%d0%be%d1%81%d1%82%d0%be%d1%80%d0%be%d0%b6%d0%bd%d0%be%d1%81%d1%82%d0%b8-%d0%bf%d1%80%d0%b8-%d0%b3%d0%be%d0%bb%d0%be%d0%bb%d1%91%d0%b4%d0%b5/" title="Меры предосторожности при гололёде" rel="bookmark">Меры предосторожности при гололёде</a>
+	</h3>
+
+	
+	
+	
+<a href="/%d0%bc%d0%b5%d1%80%d1%8b-%d0%bf%d1%80%d0%b5%d0%b4%d0%be%d1%81%d1%82%d0%be%d1%80%d0%be%d0%b6%d0%bd%d0%be%d1%81%d1%82%d0%b8-%d0%bf%d1%80%d0%b8-%d0%b3%d0%be%d0%bb%d0%be%d0%bb%d1%91%d0%b4%d0%b5/" class="post-details details-type-link" aria-label="Read more about Меры предосторожности при гололёде" rel="nofollow">Подробнее<i class="dt-icon-the7-arrow-03" aria-hidden="true"></i></a>
+
+</div></article><article class="post no-img post-641 type-post status-publish format-standard hentry category-___ category-5 description-off" data-name="Действия при пожаре" data-date="2022-12-30T21:15:54+03:00">
+
+<div class="post-entry-content">
+
+	<h3 class="entry-title">
+		<a href="/%d0%b4%d0%b5%d0%b9%d1%81%d1%82%d0%b2%d0%b8%d1%8f-%d0%bf%d1%80%d0%b8-%d0%bf%d0%be%d0%b6%d0%b0%d1%80%d0%b5/" title="Действия при пожаре" rel="bookmark">Действия при пожаре</a>
+	</h3>
+
+	
+	
+	
+<a href="/%d0%b4%d0%b5%d0%b9%d1%81%d1%82%d0%b2%d0%b8%d1%8f-%d0%bf%d1%80%d0%b8-%d0%bf%d0%be%d0%b6%d0%b0%d1%80%d0%b5/" class="post-details details-type-link" aria-label="Read more about Действия при пожаре" rel="nofollow">Подробнее<i class="dt-icon-the7-arrow-03" aria-hidden="true"></i></a>
+
+</div></article><article class="post no-img post-406 type-post status-publish format-standard hentry category-1 category-___ category-5 description-off" data-name="Приказ об объявлении частичной мобилизации от 21.09.2022 года" data-date="2022-10-29T15:04:36+03:00">
+
+<div class="post-entry-content">
+
+	<h3 class="entry-title">
+		<a href="/%d0%bf%d1%80%d0%b8%d0%ba%d0%b0%d0%b7-%d0%be%d0%b1-%d0%be%d0%b1%d1%8a%d1%8f%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d1%87%d0%b0%d1%81%d1%82%d0%b8%d1%87%d0%bd%d0%be%d0%b9-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb/" title="Приказ об объявлении частичной мобилизации от 21.09.2022 года" rel="bookmark">Приказ об объявлении частичной мобилизации от 21.09.2022 года</a>
+	</h3>
+
+	
+	
+	
+<a href="/%d0%bf%d1%80%d0%b8%d0%ba%d0%b0%d0%b7-%d0%be%d0%b1-%d0%be%d0%b1%d1%8a%d1%8f%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d0%b8-%d1%87%d0%b0%d1%81%d1%82%d0%b8%d1%87%d0%bd%d0%be%d0%b9-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb/" class="post-details details-type-link" aria-label="Read more about Приказ об объявлении частичной мобилизации от 21.09.2022 года" rel="nofollow">Подробнее<i class="dt-icon-the7-arrow-03" aria-hidden="true"></i></a>
+
+</div></article><article class="post post-198 type-post status-publish format-standard has-post-thumbnail hentry category-___ category-5 description-off" data-name="Действия при ветре" data-date="2021-05-21T13:28:40+03:00">
+
+<div class="post-thumbnail-wrap">
+	<div class="post-thumbnail">
+		
+		
+		<a href="/%d0%b4%d0%b5%d0%b9%d1%81%d1%82%d0%b2%d0%b8%d1%8f-%d0%bf%d1%80%d0%b8-%d0%b2%d0%b5%d1%82%d1%80%d0%b5/" class="post-thumbnail-rollover layzr-bg" ><img decoding="async" class="preload-me owl-lazy-load" src="data:image/svg+xml,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%20768%20512&#39;%2F%3E" data-src="/wp-content/uploads/2021/05/wind-in-a-wheat-field-768x512.jpg" data-srcset="/wp-content/uploads/2021/05/wind-in-a-wheat-field-768x512.jpg 768w, /wp-content/uploads/2021/05/wind-in-a-wheat-field-1152x768.jpg 1152w" alt="Wind In A Wheat Field" title="Wind In A Wheat Field" width="768" height="512"  /></a>	</div>
+</div>
+
+
+<div class="post-entry-content">
+
+	<h3 class="entry-title">
+		<a href="/%d0%b4%d0%b5%d0%b9%d1%81%d1%82%d0%b2%d0%b8%d1%8f-%d0%bf%d1%80%d0%b8-%d0%b2%d0%b5%d1%82%d1%80%d0%b5/" title="Действия при ветре" rel="bookmark">Действия при ветре</a>
+	</h3>
+
+	
+	
+	
+<a href="/%d0%b4%d0%b5%d0%b9%d1%81%d1%82%d0%b2%d0%b8%d1%8f-%d0%bf%d1%80%d0%b8-%d0%b2%d0%b5%d1%82%d1%80%d0%b5/" class="post-details details-type-link" aria-label="Read more about Действия при ветре" rel="nofollow">Подробнее<i class="dt-icon-the7-arrow-03" aria-hidden="true"></i></a>
+
+</div></article></div><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><style type="text/css" data-type="the7_shortcodes-inline-css">#default-btn-b82b12c0ab2ca3c036fccaeb04e6be2e.ico-right-side > i {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+#default-btn-b82b12c0ab2ca3c036fccaeb04e6be2e > i {
+  margin-right: 8px;
+}
+#default-btn-b82b12c0ab2ca3c036fccaeb04e6be2e * {
+  vertical-align: middle;
+}
+</style><div class="btn-align-center"><a href="/page_id=182.html" class="default-btn-shortcode dt-btn dt-btn-l fadeInLeft animate-element animation-builder link-hover-off" id="default-btn-b82b12c0ab2ca3c036fccaeb04e6be2e" title="Информация"><span>Открыть раздел &#8220;Информация&#8221;</span></a></div><div class="vc_empty_space"   style="height: 64px"><span class="vc_empty_space_inner"></span></div></div></div></div></div><!-- Row Backgrounds --><div class="upb_color" data-bg-override="ex-full" data-bg-color="#eaeaea" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false"  data-custom-vc-row=""  data-vc="6.6.0.1"  data-is_old_vc=""  data-theme-support=""   data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""    data-seperator="true"  data-seperator-type="multi_triangle_seperator"  data-seperator-shape-size="40"  data-seperator-svg-height="60"  data-seperator-full-width="true" data-seperator-position="top_bottom_seperator"  data-seperator-background-color="#fff"  data-icon=""  ></div><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="dt-fancy-separator h3-size accent-title-color accent-border-color" style="width: 100%;"><div class="dt-fancy-title"><span class="separator-holder separator-left"></span>Наша команда<span class="separator-holder separator-right"></span></div></div>
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<h4 style="text-align: center;">У вас есть вопросы? Мы с радостью на них ответим</h4>
+
+		</div>
+	</div>
+<div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<p style="text-align: center;"><strong>ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ</strong></p>
+<p style="text-align: center;">Преснякова<br />&nbsp;Татьяна Ивановна</p>
+<div class="vc_empty_space"   style="height: 10px"><span class="vc_empty_space_inner"></span></div><style type="text/css" data-type="the7_shortcodes-inline-css">#default-btn-8d610c8274af44c9dbe1f7244791973c.ico-right-side > i {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+#default-btn-8d610c8274af44c9dbe1f7244791973c > i {
+  margin-right: 8px;
+}
+#default-btn-8d610c8274af44c9dbe1f7244791973c * {
+  vertical-align: middle;
+}
+</style><div class="btn-align-center"><a href="tel:+79525745932" class="default-btn-shortcode dt-btn dt-btn-m link-hover-off full-width-btn" id="default-btn-8d610c8274af44c9dbe1f7244791973c"><span>ПОЗВОНИТЬ</span></a></div><span style="color: var( --e-global-color-text ); font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: var( --e-global-typography-text-font-weight ); word-spacing: normal;"><div class="vc_empty_space"   style="height: 1px"><span class="vc_empty_space_inner"></span></div></span><span style="color: var( --e-global-color-text ); font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: var( --e-global-typography-text-font-weight ); word-spacing: normal;"><br /></span></p>
+<p style="text-align: center;"><strong>ГЛАВНЫЙ БУХГАЛТЕР</strong></p>
+<p style="text-align: center;">Альбицкая</p>
+<p style="text-align: center;">Наталья Александровна</p>
+<p style="text-align: left;"><div class="vc_empty_space"   style="height: 10px"><span class="vc_empty_space_inner"></span></div><style type="text/css" data-type="the7_shortcodes-inline-css">#default-btn-883b74852e3e11524abdc009700b5890.ico-right-side > i {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+#default-btn-883b74852e3e11524abdc009700b5890 > i {
+  margin-right: 8px;
+}
+#default-btn-883b74852e3e11524abdc009700b5890 * {
+  vertical-align: middle;
+}
+</style><div class="btn-align-center"><a href="tel:+79889439273" class="default-btn-shortcode dt-btn dt-btn-m link-hover-off full-width-btn" id="default-btn-883b74852e3e11524abdc009700b5890"><span>ПОЗВОНИТЬ</span></a></div><span style="color: var( --e-global-color-text ); font-family: var( --e-global-typography-text-font-family ), Sans-serif; font-weight: var( --e-global-typography-text-font-weight ); word-spacing: normal;"><div class="vc_empty_space"   style="height: 1px"><span class="vc_empty_space_inner"></span></div></span></p>
+<p style="text-align: center;"><strong style="text-align: center;">БУХГАЛТЕР ПО </strong></p>
+<p style="text-align: center;"><strong style="text-align: center;">РАСЧЕТУ КВИТАНЦИЙ</strong></p>
+<p style="text-align: center;">Бочарова</p>
+<p style="text-align: center;">Валерия Сергеевна</p>
+<div class="vc_empty_space"   style="height: 10px"><span class="vc_empty_space_inner"></span></div><style type="text/css" data-type="the7_shortcodes-inline-css">#default-btn-237c86a7d7c3b1ba1550859117b54f0e.ico-right-side > i {
+  margin-right: 0px;
+  margin-left: 8px;
+}
+#default-btn-237c86a7d7c3b1ba1550859117b54f0e > i {
+  margin-right: 8px;
+}
+#default-btn-237c86a7d7c3b1ba1550859117b54f0e * {
+  vertical-align: middle;
+}
+</style><div class="btn-align-center"><a href="tel:+79515345794" class="default-btn-shortcode dt-btn dt-btn-m link-hover-off full-width-btn" id="default-btn-237c86a7d7c3b1ba1550859117b54f0e"><span>ПОЗВОНИТЬ</span></a></div><div class="vc_empty_space"   style="height: 20px"><span class="vc_empty_space_inner"></span></div><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><div class="vc_row wpb_row vc_inner vc_row-fluid"></div><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div>
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			
+		</div>
+	</div>
+<p style="text-align: center;">
+
+		</div>
+	</div>
+</div></div></div></div><div class="vc_empty_space"   style="height: 64px"><span class="vc_empty_space_inner"></span></div></div></div></div></div><div class="vc_row wpb_row vc_row-fluid vc_custom_1621341952042 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="dt-fancy-separator h3-size accent-title-color accent-border-color" style="width: 100%;"><div class="dt-fancy-title"><span class="separator-holder separator-left"></span>Как добраться до СНТ &#8220;Урожай&#8220;:<span class="separator-holder separator-right"></span></div></div><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_text_column wpb_content_element" >
+		<div class="wpb_wrapper">
+			<p>Офис правления СНТ &#8220;Урожай&#8221; расположен по адресу:</p>
+<p>г.Ростов-на-Дону, ул. Петренко д.2, офис №87 (Вход в офис через подвальное помещение со двора)</p>
+<p>СНТ &#8220;Урожай&#8221; находится в Суворовском микрорайоне.</p>
+<p><strong>Режим работы правления:</strong></p>
+
+		</div>
+	</div>
+<div class="standard-arrow list-divider bullet-top"><ul>
+<li>Четверг (Приём по предварительной записи)</li>
+<li>Суббота с 10:00 до 16:00</li>
+<li>Воскресенье с 10:00 до 16:00</li>
+</ul>
+</div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+	<div class="wpb_raw_code wpb_raw_js" >
+		<div class="wpb_wrapper">
+		<!--Скрипт вывода яндекс карты-->
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A98a412ffbe46c9d3aede32b1a61907d528605b6bc3f71589b26ec2344711c34a&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+
+		</div>
+	</div>
+</div></div></div></div><div class="vc_empty_space"   style="height: 32px"><span class="vc_empty_space_inner"></span></div><div class="dt-fancy-separator h3-size accent-title-color accent-border-color" style="width: 100%;"><div class="dt-fancy-title"><span class="separator-holder separator-left"></span>Не нашли то что искали? Воспользуйтесь поиском<span class="separator-holder separator-right"></span></div></div><div  class="vc_wp_search wpb_content_element"><div class="widget widget_search">	<form class="searchform" role="search" method="get" action="/">
+		<label for="the7-search" class="screen-reader-text">Поиск:</label>
+		<input type="text" id="the7-search" class="field searchform-s" name="s" value="" placeholder="Для поиска нажмите Enter &hellip;" />
+		<input type="submit" class="assistive-text searchsubmit" value="Вперед!" />
+		<a href="" class="submit"></a>
+	</form>
+</div></div></div></div></div></div>						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		<span class="cp-load-after-post"></span>
+	</div><!-- #content -->
+
+	
+
+
+			</div><!-- .wf-container -->
+		</div><!-- .wf-wrap -->
+
+	
+	</div><!-- #main -->
+
+	
+
+	
+	<!-- !Footer -->
+	<footer id="footer" class="footer solid-bg">
+
+		
+			<div class="wf-wrap">
+				<div class="wf-container-footer">
+					<div class="wf-container">
+						<section id="text-2" class="widget widget_text wf-cell wf-1-4"><div class="widget-title">Реквизиты:</div>			<div class="textwidget"><p>СНТ &#8220;Урожай&#8221;<br />
+ИНН 6165057578<br />
+КПП 616501001<br />
+р/сч 40703810952090000934<br />
+ЮГО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК<br />
+БИК 046015602<br />
+к/сч 30101810600000000602</p>
+<p>QR-код для оплаты<br />
+<img decoding="async" class="alignnone size-full wp-image-343" src="/wp-content/uploads/2022/10/QR-код.png" alt="" width="184" height="188" /></p>
+</div>
+		</section><section id="text-3" class="widget widget_text wf-cell wf-1-4"><div class="widget-title">Где мы находимся:</div>			<div class="textwidget"><p>Офис правления находится по адресу:<br />
+344010, г. Ростов-на-Дону, ул. Петренко 2, офис 87<br />
+Подвальное помещение, вход со двора.<br />
+Адрес эл.почты:<br />
+harvest.rnd@mail.ru</p>
+<p><strong>Мы в социальных сетях:</strong></p>
+<p><a href="https://t.me/+v6GO_RkE79tiYmNi"><img loading="lazy" decoding="async" class="alignnone wp-image-519" src="/wp-content/uploads/2022/11/telegram-1024x670-1.png" alt="" width="75" height="49" srcset="/wp-content/uploads/2022/11/telegram-1024x670-1.png 1024w, /wp-content/uploads/2022/11/telegram-1024x670-1-300x196.png 300w, /wp-content/uploads/2022/11/telegram-1024x670-1-768x503.png 768w, /wp-content/uploads/2022/11/telegram-1024x670-1-391x260.png 391w" sizes="(max-width: 75px) 100vw, 75px" /></a></p>
+</div>
+		</section><section id="text-4" class="widget widget_text wf-cell wf-1-4">			<div class="textwidget"><p>ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ<br />
+Преснякова Татьяна Ивановна<br />
++7 952 574 59 32<br />
+Четверг приём по предварительной записи<br />
+Суббота приём с 10:00 до 16:00 (Выходные дни воскресенье, понедельник)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+		</section><section id="text-5" class="widget widget_text wf-cell wf-1-4">			<div class="textwidget"><p><strong>ГЛАВНЫЙ БУХГАЛТЕР</strong><br />
+Альбицкая Наталья Александровна<br />
++7 988 943 92 73<br />
+Суббота приём с 10:00 до 16:00</p>
+<p><strong>БУХГАЛТЕР ПО РАСЧЕТУ КВИТАНЦИЙ</strong><br />
+Бочарова Валерия Сергеевна<br />
++7 951 534 57 94<br />
+Суббота приём с 10:00 до 16:00<br />
+Воскресенье приём с 10:00 до 16:00</p>
+</div>
+		</section>					</div><!-- .wf-container -->
+				</div><!-- .wf-container-footer -->
+			</div><!-- .wf-wrap -->
+
+			
+<!-- !Bottom-bar -->
+<div id="bottom-bar" class="logo-left" role="contentinfo">
+    <div class="wf-wrap">
+        <div class="wf-container-bottom">
+
+			
+                <div class="wf-float-left">
+
+					Садовое некоммерческое товарищество СНТ "Урожай"
+                </div>
+
+			
+            <div class="wf-float-right">
+
+				
+            </div>
+
+        </div><!-- .wf-container-bottom -->
+    </div><!-- .wf-wrap -->
+</div><!-- #bottom-bar -->
+	</footer><!-- #footer -->
+
+
+	<a href="#" class="scroll-top"><span class="screen-reader-text">Вверх</span></a>
+
+</div><!-- #page -->
+
+			<script type="text/javascript" id="modal">
+				document.addEventListener("DOMContentLoaded", function(){
+					startclock();
+				});
+				function stopclock (){
+					if(timerRunning) clearTimeout(timerID);
+					timerRunning = false;
+						//document.cookie="time=0";
+					}
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1717659771 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+								<script type="text/javascript" id="info-bar">
+					document.addEventListener("DOMContentLoaded", function(){
+						startclock();
+					});
+					function stopclock (){
+						if(timerRunning) clearTimeout(timerID);
+						timerRunning = false;
+						//document.cookie="time=0";
+					}
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1717659771 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+								<script type="text/javascript" id="slidein">
+					document.addEventListener("DOMContentLoaded", function(){
+						startclock();
+					});
+					function stopclock (){
+						if(timerRunning) clearTimeout(timerID);
+						timerRunning = false;
+						//document.cookie="time=0";
+					}
+
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1717659771 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+				
+<!-- 
+Этот код содержит три скрипта, каждый из которых предназначен для работы с часами и таймерами:
+
+Скрипт "modal":
+
+Вызывается при загрузке страницы (DOMContentLoaded), чтобы начать работу с часами (startclock()).
+Включает функции stopclock(), showtime(), startclock(), которые управляют таймером и отображением времени.
+Определяет переменные для работы с временем и разницей во времени.
+Скрипт "info-bar":
+
+Аналогичен первому скрипту "modal" и выполняет те же функции.
+Включает функции stopclock(), showtime(), startclock(), которые управляют таймером и отображением времени.
+Определяет переменные для работы с временем и разницей во времени.
+Скрипт "slidein":
+
+Также аналогичен первым двум скриптам и выполняет те же функции.
+Включает функции stopclock(), showtime(), startclock(), которые управляют таймером и отображением времени.
+Определяет переменные для работы с временем и разницей во времени.
+-->				
+				
+<script type="text/html" id="wpb-modifications"></script><ul id="main-slideshow-content" class="rsHomePorthole"><li><img class="preload-me" src="/wp-content/uploads/2021/05/garden-25N4VGX-scaled.jpg" srcset="/wp-content/uploads/2021/05/garden-25N4VGX-scaled.jpg 2560w" sizes="2560px" data-rstmb="/wp-content/uploads/2021/05/garden-25N4VGX-scaled.jpg" alt="" width="2560" height="1440"  /></li><li><img class="preload-me" src="/wp-content/uploads/2021/05/garden-P3K72MD-1.jpg" srcset="/wp-content/uploads/2021/05/garden-P3K72MD-1.jpg 1404w" sizes="1404px" data-rstmb="/wp-content/uploads/2021/05/garden-P3K72MD-1-150x150.jpg" alt="" width="1404" height="936"  /></li><li><img class="preload-me" src="/wp-content/uploads/2021/05/garden-4JMU2CU-1.jpg" srcset="/wp-content/uploads/2021/05/garden-4JMU2CU-1.jpg 1500w" sizes="1500px" data-rstmb="/wp-content/uploads/2021/05/garden-4JMU2CU-1-150x150.jpg" alt="" width="1500" height="1125"  /></li></ul><link rel='stylesheet' id='ult-background-style-css' href='/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/background-style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='dt-porthole-slider-css' href='/wp-content/themes/dt-the7/css/photo-scroller.min.css' type='text/css' media='all' />
+<!-- 
+dt-main-js: основной JavaScript файл от темы DT The7.
+jquery-ui-core-js: ядро jQuery UI.
+jquery-ui-datepicker-js: jQuery UI Datepicker.
+-->
+<script type="text/javascript" src="/wp-content/themes/dt-the7/js/main.min.js" id="dt-main-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+<script type="text/javascript" id="jquery-ui-datepicker-js-after">
+/* <![CDATA[ */
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c","currentText":"\u0421\u0435\u0433\u043e\u0434\u043d\u044f","monthNames":["\u042f\u043d\u0432\u0430\u0440\u044c","\u0424\u0435\u0432\u0440\u0430\u043b\u044c","\u041c\u0430\u0440\u0442","\u0410\u043f\u0440\u0435\u043b\u044c","\u041c\u0430\u0439","\u0418\u044e\u043d\u044c","\u0418\u044e\u043b\u044c","\u0410\u0432\u0433\u0443\u0441\u0442","\u0421\u0435\u043d\u0442\u044f\u0431\u0440\u044c","\u041e\u043a\u0442\u044f\u0431\u0440\u044c","\u041d\u043e\u044f\u0431\u0440\u044c","\u0414\u0435\u043a\u0430\u0431\u0440\u044c"],"monthNamesShort":["\u042f\u043d\u0432","\u0424\u0435\u0432","\u041c\u0430\u0440","\u0410\u043f\u0440","\u041c\u0430\u0439","\u0418\u044e\u043d","\u0418\u044e\u043b","\u0410\u0432\u0433","\u0421\u0435\u043d","\u041e\u043a\u0442","\u041d\u043e\u044f","\u0414\u0435\u043a"],"nextText":"\u0414\u0430\u043b\u0435\u0435","prevText":"\u041d\u0430\u0437\u0430\u0434","dayNames":["\u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u044c\u0435","\u041f\u043e\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u0438\u043a","\u0412\u0442\u043e\u0440\u043d\u0438\u043a","\u0421\u0440\u0435\u0434\u0430","\u0427\u0435\u0442\u0432\u0435\u0440\u0433","\u041f\u044f\u0442\u043d\u0438\u0446\u0430","\u0421\u0443\u0431\u0431\u043e\u0442\u0430"],"dayNamesShort":["\u0412\u0441","\u041f\u043d","\u0412\u0442","\u0421\u0440","\u0427\u0442","\u041f\u0442","\u0421\u0431"],"dayNamesMin":["\u0412\u0441","\u041f\u043d","\u0412\u0442","\u0421\u0440","\u0427\u0442","\u041f\u0442","\u0421\u0431"],"dateFormat":"dd.mm.yy","firstDay":1,"isRTL":false});});
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/js/jquery.typewatch.js" id="mec-typekit-script-js"></script>
+<!-- Скрипт для отслеживания ввода текста с помощью jQuery Typewatch. -->
+
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/packages/featherlight/featherlight.js" id="featherlight-js"></script>
+<!-- Скрипт Featherlight для создания модальных окон. -->
+
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/packages/select2/select2.full.min.js" id="mec-select2-script-js"></script>
+<!-- Скрипт Select2 для стилизации выпадающих списков. -->
+
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/packages/tooltip/tooltip.js" id="mec-tooltip-script-js"></script>
+<!-- Скрипт для добавления всплывающих подсказок. -->
+
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/packages/lity/lity.min.js" id="mec-lity-script-js"></script>
+<!-- Скрипт Lity для создания модальных окон. -->
+
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/packages/colorbrightness/colorbrightness.min.js" id="mec-colorbrightness-script-js"></script>
+<!-- Скрипт для вычисления яркости цвета. -->
+
+<script type="text/javascript" src="/wp-content/plugins/modern-events-calendar-lite/assets/packages/owl-carousel/owl.carousel.min.js" id="mec-owl-carousel-script-js"></script>
+<!-- Скрипт Owl Carousel для создания каруселей. -->
+
+<script type="text/javascript" src="/wp-content/plugins/embed-any-document/js/pdfobject.min.js" id="awsm-ead-pdf-object-js"></script>
+<!-- Скрипт для встраивания документов, например PDF файлов. -->
+
+<script type="text/javascript" id="awsm-ead-public-js-extra">
+/* <![CDATA[ */
+var eadPublic = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/embed-any-document/js/embed-public.min.js" id="awsm-ead-public-js"></script>
+<!-- Скрипт для встраивания различных типов документов на вашем сайте. -->
+
+<script type="text/javascript" src="/wp-content/plugins/contact-form-7/includes/swv/js/index.js" id="swv-js"></script>
+<!-- Скрипт для валидации форм, созданных с помощью Contact Form 7. -->
+
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/contact-form-7/includes/js/index.js" id="contact-form-7-js"></script>
+<!-- Скрипт для работы с формами, созданными с помощью Contact Form 7. -->
+
+<script type="text/javascript" src="/wp-content/plugins/go_pricing/assets/js/go_pricing_scripts.js" id="go-pricing-scripts-js"></script>
+<!-- Скрипт для работы с таблицами цен от плагина Go Pricing. -->
+
+<script type="text/javascript" id="stripe-handler-ng-js-extra">
+/* <![CDATA[ */
+var wpASPNG = {"iframeUrl":"\/asp-payment-box\/","ppSlug":"asp-payment-box","prefetch":"","ckey":"84b7e2caea6f341b0e9e9e185d2c8bf1","aspDevMode":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/stripe-payments/public/assets/js/stripe-handler-ng.js" id="stripe-handler-ng-js"></script>
+<!-- Скрипт для обработки платежей с помощью Stripe Payments. -->
+
+<script type="text/javascript" src="/wp-content/themes/dt-the7/lib/jquery-mousewheel/jquery-mousewheel.min.js" id="jquery-mousewheel-js"></script>
+<!-- Скрипт для подключения поддержки прокрутки с помощью колеса мыши с использованием jQuery. -->
+
+<script type="text/javascript" src="/wp-content/themes/dt-the7/lib/custom-scrollbar/custom-scrollbar.min.js" id="the7-custom-scrollbar-js"></script>
+<!-- Скрипт для создания пользовательской полосы прокрутки на вашем сайте. -->
+
+<script type="text/javascript" src="/wp-content/plugins/dt-the7-core/assets/js/post-type.min.js" id="the7-core-js"></script>
+<!-- Скрипт для работы с типами записей от плагина DT The7 Core. -->
+
+<script type="text/javascript" src="/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js" id="wpb_composer_front_js-js"></script>
+<!-- Скрипт для работы фронтенда от WPBakery Page Builder (ранее Visual Composer). -->
+
+<script type="text/javascript" src="/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/jquery-appear.min.js" id="ultimate-appear-js"></script>
+<!-- Скрипт для добавления эффектов появления элементов с помощью jQuery. -->
+
+<script type="text/javascript" src="/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/ultimate_bg.min.js" id="ultimate-row-bg-js"></script>
+<!-- Скрипт для настройки фона секций с помощью плагина Ultimate Addons for WPBakery Page Builder. -->
+
+<script type="text/javascript" src="/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/custom.min.js" id="ultimate-custom-js"></script>
+<!-- Пользовательский скрипт для настройки плагина Ultimate Addons for WPBakery Page Builder. -->
+
+<script type="text/javascript" src="/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js" id="elementor-webpack-runtime-js"></script>
+<!-- Скрипт времени выполнения Webpack для плагина Elementor. -->
+
+<script type="text/javascript" src="/wp-content/plugins/elementor/assets/js/frontend-modules.min.js" id="elementor-frontend-modules-js"></script>
+<!-- Модули фронтенда для плагина Elementor. -->
+
+<script type="text/javascript" src="/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js" id="elementor-waypoints-js"></script>
+<!-- Библиотека Waypoints, используемая плагином Elementor. -->
+
+<script type="text/javascript" id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0432 Facebook","shareOnTwitter":"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f \u0432 Twitter","pinIt":"\u0417\u0430\u043f\u0438\u043d\u0438\u0442\u044c","download":"\u0421\u043a\u0430\u0447\u0430\u0442\u044c","downloadImage":"\u0421\u043a\u0430\u0447\u0430\u0442\u044c \u0438\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435","fullscreen":"\u0412\u043e \u0432\u0435\u0441\u044c \u044d\u043a\u0440\u0430\u043d","zoom":"\u0423\u0432\u0435\u043b\u0438\u0447\u0435\u043d\u0438\u0435","share":"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f","playVideo":"\u041f\u0440\u043e\u0438\u0433\u0440\u0430\u0442\u044c \u0432\u0438\u0434\u0435\u043e","previous":"\u041d\u0430\u0437\u0430\u0434","next":"\u0414\u0430\u043b\u0435\u0435","close":"\u0417\u0430\u043a\u0440\u044b\u0442\u044c","a11yCarouselWrapperAriaLabel":"\u041a\u0430\u0440\u0443\u0441\u0435\u043b\u044c | \u0413\u043e\u0440\u0438\u0437\u043e\u043d\u0442\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u043a\u0440\u0443\u0442\u043a\u0430: \u0441\u0442\u0440\u0435\u043b\u043a\u0430 \u0432\u043b\u0435\u0432\u043e \u0438 \u0432\u043f\u0440\u0430\u0432\u043e","a11yCarouselPrevSlideMessage":"\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0439 \u0441\u043b\u0430\u0439\u0434","a11yCarouselNextSlideMessage":"\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0441\u043b\u0430\u0439\u0434","a11yCarouselFirstSlideMessage":"\u042d\u0442\u043e \u043f\u0435\u0440\u0432\u044b\u0439 \u0441\u043b\u0430\u0439\u0434","a11yCarouselLastSlideMessage":"\u042d\u0442\u043e \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0441\u043b\u0430\u0439\u0434","a11yCarouselPaginationBulletMessage":"\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u0441\u043b\u0430\u0439\u0434\u0443"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0439 - \u043a\u043d\u0438\u0436\u043d\u0430\u044f \u043e\u0440\u0438\u0435\u043d\u0442\u0430\u0446\u0438\u044f","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0439 - \u0430\u043b\u044c\u0431\u043e\u043c\u043d\u0430\u044f \u043e\u0440\u0438\u0435\u043d\u0442\u0430\u0446\u0438\u044f","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"\u041f\u043b\u0430\u043d\u0448\u0435\u0442 - \u043a\u043d\u0438\u0436\u043d\u0430\u044f \u043e\u0440\u0438\u0435\u043d\u0442\u0430\u0446\u0438\u044f","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"\u041f\u043b\u0430\u043d\u0448\u0435\u0442 - \u0430\u043b\u044c\u0431\u043e\u043c\u043d\u0430\u044f \u043e\u0440\u0438\u0435\u043d\u0442\u0430\u0446\u0438\u044f","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"\u041d\u043e\u0443\u0442\u0431\u0443\u043a","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"\u0428\u0438\u0440\u043e\u043a\u043e\u0444\u043e\u0440\u043c\u0430\u0442\u043d\u044b\u0435","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.21.8","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"additional_custom_breakpoints":true,"e_swiper_latest":true,"container_grid":true,"home_screen":true,"ai-layout":true,"landing-pages":true},"urls":{"assets":"\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":11,"title":"%D0%A3%D1%80%D0%BE%D0%B6%D0%B0%D0%B961.%D1%80%D1%84%20%E2%80%93%20%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%A1%D0%9D%D0%A2%20%22%D0%A3%D1%80%D0%BE%D0%B6%D0%B0%D0%B9%22%20%D0%B2%20%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%B5-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83","excerpt":"","featuredImage":false}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/elementor/assets/js/frontend.min.js" id="elementor-frontend-js"></script>
+<!-- Скрипт фронтенда для плагина Elementor, обеспечивающий работу его основных функций на стороне клиента. -->
+
+<script type="text/javascript" src="/wp-content/themes/dt-the7/js/photo-scroller.min.js" id="dt-porthole-slider-js"></script>
+<!-- Скрипт фото-прокрутки для темы DT The7, который позволяет создавать визуально привлекательные слайд-шоу на вашем сайте. -->
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg"></div>
+	<div class="pswp__scroll-wrap">
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+		<div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" title="Close (Esc)" aria-label="Close (Esc)"></button>
+				<button class="pswp__button pswp__button--share" title="Share" aria-label="Share"></button>
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen" aria-label="Toggle fullscreen"></button>
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out" aria-label="Zoom in/out"></button>
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)" aria-label="Previous (arrow left)">
+			</button>
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)" aria-label="Next (arrow right)">
+			</button>
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
